@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 import random
 import math
 
-from datasets import MultimodalNIFTIDataset3D, DatasetLoader
-from augmentations import RandomCrop, RandomRigid, RandomDeformation, MotionArtifact3d, DoublingArtifact3d, ShadowArtifact3d
-from spatial_diffusion_model import AffineTransformer
-from spatial_diffusion import SpatialDiffusion, Transformation
+from utils.datasets import MultimodalNIFTIDataset3D, DatasetLoader
+from utils.augmentations import RandomCrop, RandomRigid, RandomDeformation, MotionArtifact3d, DoublingArtifact3d, ShadowArtifact3d
+from diffusion.spatial_diffusion_model import AffineTransformer
+from diffusion.spatial_diffusion import SpatialDiffusion, Transformation
 from ema_pytorch import EMA
 from fvcore.nn import FlopCountAnalysis, flop_count_table
 

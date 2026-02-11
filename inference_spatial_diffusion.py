@@ -5,9 +5,9 @@ import nibabel as nib
 import argparse
 import random
 
-from datasets import MultimodalNIFTIDataset3D
-from spatial_diffusion_model import AffineTransformer
-from spatial_diffusion import SpatialDiffusion
+from utils.datasets import MultimodalNIFTIDataset3D
+from diffusion.spatial_diffusion_model import AffineTransformer
+from diffusion.spatial_diffusion import SpatialDiffusion
 
 if __name__ == '__main__':
 
