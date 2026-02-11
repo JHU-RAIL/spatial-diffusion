@@ -201,7 +201,7 @@ class AffineTransformer(nn.Module):
             threshold = -0.5
 
         elif type.lower() == 'mri' or type.lower() == 'venous' or type.lower() == 'none':
-            # Don't apply any preprocessing -- re-normalize and reset gradients to its original setting
+            # Don't apply any preprocessing -- re-normalize the
             input = self.normalize(input)
             return input
         
