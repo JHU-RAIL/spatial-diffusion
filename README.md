@@ -8,7 +8,7 @@ Spatial diffusion is a novel, self-supervised deep learning framework for 3D aff
 
 ## Table of Contents
 - [Installation](#installation)  
-- [Dataset and Pre-trained Models](#dataset)
+- [Dataset and Pre-trained Models](#dataset-and-pre-trained-models)
 - [Overview](#overview)
 - [Usage](#usage)  
   - [Training](#training)  
