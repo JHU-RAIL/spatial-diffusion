@@ -110,7 +110,7 @@ python3 inference_spatial_diffusion.py --ref ../path/to/scan.nii.gz --mov ../pat
 
 To perform zero-shot cross-modality registration, set `--cond_class 0` on a model previously trained on multiple modalities. This is also useful for foundation models performing intra-modality registration on modalities with few training samples.
 
-### Citation
+## Citation
 
 If you find this repository useful, please cite our work:
 
