@@ -7,9 +7,16 @@ This is the author's official PyTorch implementation of "Spatial Diffusion: A Sc
 ---
 
 ## Table of Contents
-- [Installation](#installation)  
+- [Installation](#installation)
+  - [Requirements](#requirements)  
+  - [Setup](#setup) 
 - [Dataset and Pre-trained Models](#dataset-and-pre-trained-models)
+  - [Data](#data)  
+  - [Model Weights](#model-weights) 
 - [Overview](#overview)
+  - [Diffusion](#diffusion)  
+  - [Utilities](#utilities)
+  - [Scripts](#scripts) 
 - [Usage](#usage)  
   - [Training](#training)  
   - [Inference](#inference)  
@@ -62,7 +69,11 @@ The model weights can be installed at:
 
 `datasets.py` - [implementation of a multi-modal 3D dataloader](https://github.com/JHU-RAIL/spatial-diffusion/blob/main/utils/datasets.py) that performs normalization and standard preprocessing for OCT, OCTA, T1-weighted brain MRI, and T2-weighted head and neck MRI provided as NIFTI files. Automatically assigns modality-specific class IDs for multimodal training of a conditional spatial diffusion model.
 
-### Training and Inferencing
+### Scripts
 `train_spatial_diffusion.py` - [script for training spatial diffusion](https://github.com/JHU-RAIL/spatial-diffusion/blob/main/train_spatial_diffusion.py), supporting both unimodality and multimodality training.
 
 `inference_spatial_diffusion.py` - [script for inferencing spatial diffusion](https://github.com/JHU-RAIL/spatial-diffusion/blob/main/inference_spatial_diffusion.py), registering the specified moving volumes to the reference volumes provided as NIFTI files. Supports unconditional, modality-condition, and zero-shot cross-modality registration with spatial diffusion.
+
+## Usage
+### Training
+### Inference
