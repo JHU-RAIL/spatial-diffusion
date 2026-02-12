@@ -54,7 +54,7 @@ pip install -r requirements.txt
 ### Data
 Spatial diffusion was evaluated on optical coherence tomography (OCT), OCT angiography (OCTA), T1-weighted brain MRI, and T2-weighted head and neck MRI of venous malformations. However, only the OASIS-1 dataset of T1-weighted brain MRI is publicly available, which can be downloaded (already preprocessed) at https://github.com/adalca/medical-datasets/blob/master/neurite-oasis.md.
 
-Additionally, the MNI152 brain template can be found at https://github.com/cwmok/C2FViT/tree/main/Data (MNI152_T1_1mm_brain_pad_RSP.nii.gz is the volume of the brain and image_A_seg4_mni.nii.gz is the segmentation mask).
+Additionally, the MNI152 brain template can be found at https://github.com/cwmok/C2FViT/tree/main/Data (`MNI152_T1_1mm_brain_pad_RSP.nii.gz` is the volume of the brain and `image_A_seg4_mni.nii.gz` is the segmentation mask).
 
 ### Model Weights
 The model weights can be downloaded at:
