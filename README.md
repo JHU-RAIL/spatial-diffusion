@@ -19,7 +19,8 @@ This is the author's official PyTorch implementation of "Spatial Diffusion: A Sc
   - [Scripts](#scripts) 
 - [Usage](#usage)  
   - [Training](#training)  
-  - [Inference](#inference)  
+  - [Inference](#inference)
+- [Citation](#citation)
 
 ---
 
@@ -56,7 +57,11 @@ Spatial diffusion was evaluated on optical coherence tomography (OCT), OCT angio
 Additionally, the MNI152 brain template can be found at https://github.com/cwmok/C2FViT/tree/main/Data (MNI152_T1_1mm_brain_pad_RSP.nii.gz is the volume of the brain and image_A_seg4_mni.nii.gz is the segmentation mask).
 
 ### Model Weights
-The model weights can be installed at:
+The model weights can be downloaded at:
+
+Coming soon. Stay tuned!
+
+If you use our pre-trained models, please refer to the [citation section](#citation) for guidance on how to cite our work.
 
 ## Overview
 ### Diffusion
@@ -76,4 +81,37 @@ The model weights can be installed at:
 
 ## Usage
 ### Training
+To train spatial diffusion on a single modality:
+
+```bash
+python3 train_spatial_diffusion.py --train ./path/to/dataset/ --dataset [oct/octa/mri/venous] --save_path ./results/unimodality --gpu 0 --workers 12 --steps 115000
+```
+
+To train spatial diffusion on multiple modalities:
+
+```bash
+python3 train_spatial_diffusion.py --train ./path/to/dataset1/ ./path/to/dataset2/ ./path/to/dataset3/ ./path/to/dataset4/ --val - - ./path/to/dataset3/validation/ - --dataset [oct/octa/mri/venous] [oct/octa/mri/venous] [oct/octa/mri/venous] [oct/octa/mri/venous] --save_path ./results/foundation --gpu 0 --workers 12 --steps 265000
+```
+
+The model weights will be saved in `/ckpt` within the folder specified by `--save_path`. Both the exponential moving average (EMA) and non-EMA model weights are saved, where the `spatial_diffusion_ema_ckpt.pth` file name refers to the EMA model and `spatial_diffusion_ckpt.pth` refers to the non-EMA model.
+
 ### Inference
+To inference an unconditional spatial diffusion model trained on a single modality:
+
+```bash
+python3 inference_spatial_diffusion.py --ref ../path/to/scan.nii.gz --mov ../path/to/moving/scans/*.nii.gz --ckpt ./path/to/model/ckpts/spatial_diffusion_ema_ckpt_XXXXXX.pth --dataset [oct/octa/mri/venous] --bidir --gpu 0
+```
+
+To inference a modality-conditional spatial diffusion model trained on multiple modalities:
+
+```bash
+python3 inference_spatial_diffusion.py --ref ../path/to/scan.nii.gz --mov ../path/to/moving/scans/*.nii.gz --ckpt ./path/to/model/ckpts/spatial_diffusion_ema_ckpt_XXXXXX.pth --dataset [oct/octa/mri/venous] --n_classes 4 --cond_class 2 --bidir --gpu 0
+```
+
+To perform zero-shot cross-modality registration, set `--cond_class 0` on a model previously trained on multiple modalities. This is also useful for foundation models performing intra-modality registration on modalities with few training samples.
+
+### Citation
+
+If you find this repository useful, please cite our work:
+
+- Sumpena, E., Cornelio, A., Seshadri, S., Beiser, A., Wang, D., Ringman, J., Kashani, A., Jones, C., **“Spatial Diffusion: A Self-Supervised Deep Learning Algorithm for Artifact-Resilient 3D OCTA Registration,”** Presented at the Association for Research in Vision and Ophthalmology (ARVO) Annual Meeting, May 2025.
