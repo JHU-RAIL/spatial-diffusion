@@ -57,7 +57,7 @@ Spatial diffusion was evaluated on optical coherence tomography (OCT), OCT angio
 Additionally, the MNI152 brain template can be found at https://github.com/cwmok/C2FViT/tree/main/Data (`MNI152_T1_1mm_brain_pad_RSP.nii.gz` is the volume of the brain and `image_A_seg4_mni.nii.gz` is the segmentation mask).
 
 ### Model Weights
-The pre-trained model weights used in our experiments can be downloaded [here](https://zenodo.org/records/18623999?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjE2YTgzNjM3LWQ0NzUtNDc1OC04OTUxLTgyOTY2ZTI1NjY3OSIsImRhdGEiOnt9LCJyYW5kb20iOiI3NTM5ZTBhZTFiYTQ2NzIyNWM1NTQ5OGYwZDk2NTNlYyJ9._oTp1xdh7i8h-AtVTyeHoVmHCNKgR9oajJoUXGcmKoGsk6Qyn0k6btgvGVns8OhpeUK8EimEBeWglLlOJyTbBA), which includes all the unimodality and foundation models. If you use our pre-trained models, please refer to the [citation section](#citation) for guidance on how to cite our work.
+The pre-trained model weights used in our experiments can be downloaded [here](https://doi.org/10.5281/zenodo.18623999), which includes all the unimodality and foundation models. If you use our pre-trained models, please refer to the [citation section](#citation) for guidance on how to cite our work.
 
 ## Overview
 ### Diffusion
