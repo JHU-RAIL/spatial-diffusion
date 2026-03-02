@@ -258,7 +258,7 @@ class SpatialDiffusion:
             I = torch.eye(4, device=self.device).view(1, 4, 4).repeat(B, 1, 1)
             
             for i in tqdm(reversed(range(1, self.num_timesteps + 1)), desc='Registering Volumes',
-                          disable=not self.verbose, leave=not self.pbar_leave):
+                          disable=not self.verbose, leave=self.pbar_leave):
                 # Create tensor of timesteps
                 timestep = (torch.ones(B, device=self.device) * i).int()
 

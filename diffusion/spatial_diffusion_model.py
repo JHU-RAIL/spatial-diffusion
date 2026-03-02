@@ -114,14 +114,8 @@ class AffineTransformer(nn.Module):
         # Resize the input volume to target input dimension if necessary
         if self.input_dim is not None and self.input_dim != input_dim:
             x = F.interpolate(input, size=self.input_dim, mode='trilinear', align_corners=False).detach()
-            scaling = torch.tensor([[
-                input_dim[2] / self.input_dim[2],
-                input_dim[1] / self.input_dim[1],
-                input_dim[0] / self.input_dim[0]
-            ]], device=input.device)
         else:
             x = input
-            scaling = torch.ones((1, 3), device=input.device)
         
         # Preprocessing type must be a string or tuple of length 2
         if isinstance(prepr_type, Tuple) and len(prepr_type) != 2:
@@ -152,7 +146,6 @@ class AffineTransformer(nn.Module):
         # Encode input and generate affine transformation matrix
         features = self.encoder(prepr, t_emb, cond_class)
         affine = I + self.output_head(features).view(-1, 3, 4)
-        affine[:,:3,3] = affine[:,:3,3] * scaling
 
         # Apply affine transformation
         transformed = self._apply_transf(input[:,1].unsqueeze(1), affine)

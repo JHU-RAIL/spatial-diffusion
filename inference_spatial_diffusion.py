@@ -36,7 +36,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print()
 
-    # Wrap multi-argument list of moving volume files and input volume size
+    # Wrap multi-argument list of moving volume files and input volume size as a tuple
     args.mov = tuple(args.mov)
     args.vol_size = tuple(args.vol_size)
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     model.eval()
 
     # Initialize diffuser
-    diffusion = SpatialDiffusion(args.diffusion_steps, interp='bilinear', pbar_leave=False, device=device)
+    diffusion = SpatialDiffusion(args.diffusion_steps, interp='bilinear', device=device)
 
     # Initialize dataloaders for reference and moving volumes
     dataloaders = {
