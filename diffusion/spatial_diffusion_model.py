@@ -194,7 +194,7 @@ class AffineTransformer(nn.Module):
             threshold = -0.5
 
         elif type.lower() == 'mri' or type.lower() == 'venous' or type.lower() == 'none':
-            # Don't apply any preprocessing -- re-normalize the
+            # Don't apply any preprocessing -- re-normalize the volume
             input = self.normalize(input)
             return input
         
