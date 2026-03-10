@@ -27,7 +27,7 @@ if __name__ == '__main__':
     
     # Train model on multiple modalities:
     # >>> python3 train_spatial_diffusion.py --train ./path/to/OCT/files/ ./path/to/OCTA/files/ --dataset oct octa --save_path ./results/oct_octa --gpu 0 --workers 12 --steps 165000
-    # >>> python3 train_spatial_diffusion.py --train ./path/to/OCT/files/ ./path/to/OCTA/files/ ./path/to/OASIS-1/training/files/ ./path/to/head_and_neck_VM/files/ --val - - ./path/to/OASIS-1/validation/files/ - --dataset oct octa mri venous --save_path ./results/foundation_oct-octa-mri-vm --gpu 0 --workers 12 --steps 270000
+    # >>> python3 train_spatial_diffusion.py --train ./path/to/OCT/files/ ./path/to/OCTA/files/ ./path/to/OASIS-1/training/files/ ./path/to/head_and_neck_VM/files/ --val - - ./path/to/OASIS-1/validation/files/ - --dataset oct octa mri venous --save_path ./results/foundation_oct-octa-mri-vm --gpu 0 --workers 12 --steps 265000
 
     parser = argparse.ArgumentParser()
 
