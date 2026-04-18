@@ -110,4 +110,4 @@ To perform zero-shot cross-modality registration, set `--cond_class 0` on a mode
 
 If you find this repository or our pre-trained models useful, please cite our work:
 
-- Sumpena, E., Cornelio, A., Seshadri, S., Beiser, A., Wang, D., Ringman, J., Kashani, A., Jones, C., **“Spatial Diffusion: A Self-Supervised Deep Learning Algorithm for Artifact-Resilient 3D OCTA Registration,”** Presented at the Association for Research in Vision and Ophthalmology (ARVO) Annual Meeting, May 2025.
+- Edmund Sumpena, Andrew Cornelio, Sudha Seshadri, Alexa Beiser, Danny JJ Wang, John M Ringman, Amir H Kashani, Craig Jones; Spatial Diffusion: A Self-Supervised Deep Learning Algorithm for Artifact-Resilient 3D OCTA Registration. Invest. Ophthalmol. Vis. Sci. 2025;66(8):1475.
